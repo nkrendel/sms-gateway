@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence
+    xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+      http://java.sun.com/xml/ns/persistence
+      http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0">
+
+	<persistence-unit name="sms-gateway">
+
+	    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+		<!-- <exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+		<class>com.jda.gateway.persistence.Person</class>
+ 		<class>com.jda.gateway.persistence.Handset</class> 
+ 		<class>com.jda.gateway.persistence.HandsetStatus</class>
+ 		<class>com.jda.gateway.persistence.HandsetNumber</class>
+ 		<class>com.jda.gateway.persistence.HandsetAction</class>
+
+	    <properties>
+	        <property name="javax.persistence.target-database" value="PostgreSQL" />
+	        <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+	        <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-50-16-201-126.compute-1.amazonaws.com:5432/d4n595u0v5hkk?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory" />
+	        <property name="javax.persistence.jdbc.user" value="rcejqvurnodxvi" />
+	        <property name="javax.persistence.jdbc.password" value="OhFs2MgFAi0-d0X9ggJHOXjDbC" />
+	        <property name="javax.persistence.jdbc.ssl" value="true" />
+	        <property name="eclipselink.logging.level" value="INFO" />
+	        <property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode" value="database"/>
+		</properties>
+
+	</persistence-unit>
+
+</persistence>
